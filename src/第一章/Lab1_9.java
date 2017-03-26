@@ -14,7 +14,7 @@ public class Lab1_9 {
 			for (int j = 0; j < map[0].length; j++) {
 				height[j] = map[i][j] == 0 ? 0 : height[j] + 1;
 			}
-			Max = maxNumFromHeight(height) > Max ? maxNumInHeight(height)
+			Max = maxNumFromHeight(height) > Max ? maxNumFromHeight(height)
 					: Max;
 		}
 		return Max;

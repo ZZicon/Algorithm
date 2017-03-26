@@ -21,9 +21,12 @@ public class Lab1_8 {
 			arr[i] = new Node(queue[i]);
 		}
 		Stack <Node> stack = new Stack <Node>();
+		
 		// Map保存左右节点联系
 		HashMap <Node, Node> lBigMap = new HashMap <Node, Node>();
 		HashMap <Node, Node> rBigMap = new HashMap <Node, Node>();
+		
+		//所有数的左边第一个比它大的数
 		for (int i = 0; i < arr.length; i++) {
 			Node curNode = arr[i];
 			while ((!stack.isEmpty())
@@ -35,6 +38,8 @@ public class Lab1_8 {
 		while (!stack.isEmpty()) {
 			StackToMap(stack, lBigMap);
 		}
+		
+		//所有数的右边第一个比它大的数
 		for (int i = arr.length - 1; i > -1; i--) {
 			Node curNode = arr[i];
 			while ((!stack.isEmpty())
@@ -47,6 +52,8 @@ public class Lab1_8 {
 			StackToMap(stack, rBigMap);
 		}
 		Node head = null;
+		
+		//生成树
 		for (int i = 0; i < arr.length; i++) {
 			Node curNode = arr[i];
 			Node left = lBigMap.get(curNode);
@@ -77,7 +84,7 @@ public class Lab1_8 {
 		}
 		return head;
 	}
-
+	
 	private void StackToMap(Stack <Node> stack, HashMap <Node, Node> map) {
 		Node node = stack.pop();
 		if (!stack.isEmpty()) {

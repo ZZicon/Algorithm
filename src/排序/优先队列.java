@@ -37,15 +37,14 @@ public class 优先队列 {
 	}
 
 	// 返回并去掉最大值
-	public static int[] HeapExtractMax(int a[]) {
+	public static int HeapExtractMax(int a[]) {
 		if (a.length < 0) {
 			System.out.println("数组为空！");
 		}
 		int max = a[0];
 		a[0] = a[a.length - 1];
 		MaxHeapify(a, a.length - 1, 0);
-		int[] b = new int[a.length - 1]; 
-		return b;
+		return max;
 	}
 
 	// 把下标i的值增加
@@ -72,15 +71,5 @@ public class 优先队列 {
 		b[a.length] = num;
 		HeapChangeKey(b,a.length,num);
 		return b;
-	}
-
-	public static void main(String args[]) {
-		int a[] = { 4, 1, 3, 2, 16, 9, 10, 14, 8, 7 };
-		int b[];
-		BuildMaxHeap(a, a.length);
-		b = HeapExtractMax(a);
-		for(int i = 0;i<b.length;i++){
-			System.out.print(b[i] + " ");
-		}
 	}
 }

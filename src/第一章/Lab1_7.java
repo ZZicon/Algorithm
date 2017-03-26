@@ -30,8 +30,7 @@ public class Lab1_7 {
 		int[] res = new int[arr.length - w + 1];
 		int index = 0;
 		for (int i = 0; i < arr.length; i++) {
-			while (!maxqueue.isEmpty()
-					&& arr[maxqueue.peekLast()] <= arr[i]) {
+			while (!maxqueue.isEmpty() && arr[maxqueue.peekLast()] <= arr[i]) {
 				maxqueue.pollLast();
 			}
 			maxqueue.addLast(i);
