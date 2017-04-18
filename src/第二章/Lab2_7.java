@@ -99,7 +99,8 @@ public class Lab2_7 {
 
 		return result;
 	}
-
+	
+	//常见解法
 	public boolean isPalindromEasy(Node head) {
 		if (head == null || head.next == null) {
 			return true;

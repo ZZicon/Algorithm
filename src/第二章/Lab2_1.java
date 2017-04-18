@@ -1,10 +1,10 @@
 package ตฺถþีย;
 
-class Node{
+class Node {
 	public int value;
 	public Node next;
 	public Node random;
-	
+
 	public Node(int data) {
 		this.value = data;
 	}
